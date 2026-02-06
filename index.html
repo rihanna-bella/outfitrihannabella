@@ -1,0 +1,724 @@
+﻿<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Outfit by Rihanna — Rekomendasi outfit • Daily OOTD • Simple & nyaman</title>
+
+  <meta name="description" content="Outfit by Rihanna adalah halaman kurasi rekomendasi outfit untuk daily OOTD yang simple dan nyaman. Semua CTA mengarah ke TikTok." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b4d8a" />
+
+  <style>
+    :root{
+      --max: 1100px;
+      --radius: 18px;
+
+      /* Nuansa biru + putih */
+      --bg1:#eaf3ff;
+      --bg2:#ffffff;
+      --ink:#0b1220;
+      --muted:#4b5563;
+      --line: rgba(15, 23, 42, .10);
+
+      --blue:#0b4d8a;
+      --blue2:#2a74b8;
+
+      --card: rgba(255,255,255,.82);
+      --shadow: 0 14px 34px rgba(2, 6, 23, .10);
+      --btnbg: rgba(255,255,255,.85);
+    }
+
+    /* DARK MODE */
+    [data-theme="dark"]{
+      --bg1:#070b12;
+      --bg2:#05070c;
+      --ink:#e5e7eb;
+      --muted:#a7b0bd;
+      --line: rgba(229,231,235,.10);
+
+      --blue:#3aa0ff;
+      --blue2:#2b7fd1;
+
+      --card: rgba(13,18,24,.82);
+      --shadow: 0 18px 44px rgba(0,0,0,.55);
+      --btnbg: rgba(13,18,24,.72);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 520px at 12% -10%, rgba(42,116,184,.18), transparent 58%),
+        radial-gradient(760px 480px at 92% 10%, rgba(11,77,138,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      transition: background .18s ease, color .18s ease;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+    /* NAV */
+    .nav{
+      position: sticky; top:0; z-index:20;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.58);
+      border-bottom: 1px solid var(--line);
+    }
+    [data-theme="dark"] .nav{background: rgba(5,7,12,.60)}
+    .nav-inner{
+      height: 68px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.2px; white-space:nowrap}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      box-shadow: 0 14px 26px rgba(11,77,138,.22);
+    }
+    [data-theme="dark"] .logo{box-shadow: 0 18px 34px rgba(0,0,0,.65)}
+    .nav-links{
+      display:flex; align-items:center; gap:14px;
+      color: var(--muted);
+      font-weight:800;
+      font-size: 14px;
+    }
+    .nav-links a{padding:10px 10px; border-radius:12px}
+    .nav-links a:hover{background: rgba(42,116,184,.10); color: var(--ink)}
+    .right{display:flex; align-items:center; gap:10px}
+
+    .iconbtn{
+      width:44px; height:44px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius: 14px;
+      background: var(--btnbg);
+      border:1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(2,6,23,.08);
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      user-select:none;
+    }
+    .iconbtn:hover{transform: translateY(-1px); box-shadow: 0 16px 30px rgba(2,6,23,.12)}
+    .iconbtn svg{width:18px; height:18px; opacity:.95}
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:900;
+      font-size:14px;
+      background: var(--btnbg);
+      border:1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(2,6,23,.08);
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .cta:hover{transform: translateY(-1px); box-shadow: 0 16px 30px rgba(2,6,23,.12)}
+    .cta.primary{
+      color:#fff;
+      background: linear-gradient(135deg, var(--blue), var(--blue2));
+      border: 1px solid rgba(42,116,184,.25);
+      box-shadow: 0 18px 34px rgba(11,77,138,.20);
+    }
+    .cta.primary:hover{transform: translateY(-2px)}
+
+    @media (max-width: 900px){
+      .nav-links{display:none}
+    }
+
+    /* HERO */
+    .hero{padding: 54px 0 18px}
+    .hero-card{
+      border-radius: 26px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      position:relative;
+      min-height: 340px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
+    }
+    [data-theme="dark"] .hero-card{
+      background: linear-gradient(180deg, rgba(13,18,24,.80), rgba(13,18,24,.62));
+    }
+
+    /* Foto kamu jadi background hero (simpan sebagai hero.jpg di folder yang sama) */
+    .hero-media{
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.70) 45%, rgba(255,255,255,.25) 100%),
+        url("hero.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+    }
+    [data-theme="dark"] .hero-media{
+      background-image:
+        linear-gradient(90deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.74) 48%, rgba(5,7,12,.30) 100%),
+        url("hero.jpg");
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .hero-content{
+      position:relative;
+      padding: 26px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .hero-content{grid-template-columns:1fr}
+      .hero-card{min-height: 420px}
+      .hero-media{
+        background-image:
+          linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.72) 52%, rgba(255,255,255,.40) 100%),
+          url("hero.jpg");
+      }
+      [data-theme="dark"] .hero-media{
+        background-image:
+          linear-gradient(180deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.74) 52%, rgba(5,7,12,.40) 100%),
+          url("hero.jpg");
+      }
+    }
+
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:13px; font-weight:900;
+      color: rgba(11,77,138,.98);
+      background: rgba(42,116,184,.10);
+      border:1px solid rgba(42,116,184,.16);
+      padding:8px 12px;
+      border-radius: 999px;
+    }
+    [data-theme="dark"] .pill{
+      color: rgba(58,160,255,.95);
+      background: rgba(58,160,255,.10);
+      border:1px solid rgba(58,160,255,.18);
+    }
+
+    h1{
+      margin: 14px 0 10px;
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: -0.8px;
+    }
+    @media (max-width: 520px){ h1{font-size: 34px} }
+
+    .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+    .hero-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top: 18px}
+    .mini{margin-top: 14px; font-size: 13px; color: var(--muted)}
+    .mini strong{color: var(--ink)}
+
+    .side{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .stat{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .stat .title{font-weight:900; margin:0 0 6px}
+    .stat .desc{margin:0; color:var(--muted); line-height:1.5; font-size:14px}
+
+    /* SECTION + GRID */
+    .section{padding: 16px 0 10px}
+    .section h2{font-size: 18px; letter-spacing:-.2px; margin:0 0 12px}
+
+    .category{display:flex; flex-wrap:wrap; gap:10px}
+    .chip{
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--btnbg);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-weight:900;
+      font-size: 13px;
+      user-select:none;
+    }
+
+    .row{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end;
+      justify-content:space-between;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .card{
+      grid-column: span 3;
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 300px;
+    }
+    @media (max-width: 1000px){ .card{grid-column: span 4;} }
+    @media (max-width: 720px){ .card{grid-column: span 6;} }
+    @media (max-width: 520px){ .card{grid-column: span 12;} }
+
+    /* Dummy image real (beneran gambar) pakai SVG data-uri */
+    .img{
+      height: 160px;
+      display:flex;
+      align-items:flex-end;
+      padding: 12px;
+      background-size: cover;
+      background-position: center;
+      position:relative;
+    }
+    .img::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.20) 100%);
+      pointer-events:none;
+    }
+    [data-theme="dark"] .img::after{
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.35) 100%);
+    }
+
+    .tag{
+      position:relative;
+      z-index:1;
+      font-size: 12px;
+      font-weight: 900;
+      color: #fff;
+      background: rgba(0,0,0,.30);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    .body{
+      padding: 14px 14px 16px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      flex:1;
+    }
+    .name{margin:0; font-weight:900; letter-spacing:-.2px}
+    .desc{margin:0; color: var(--muted); line-height: 1.55; font-size: 14px}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto}
+    .badge{
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--ink);
+      background: rgba(42,116,184,.10);
+      border:1px solid rgba(42,116,184,.14);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    [data-theme="dark"] .badge{
+      color: var(--ink);
+      background: rgba(58,160,255,.10);
+      border:1px solid rgba(58,160,255,.16);
+    }
+
+    /* ABOUT */
+    .about{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 820px){ .about{grid-template-columns:1fr;} }
+    .box{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .box h3{margin:0 0 8px; font-size:16px; letter-spacing:-.2px; font-weight:900}
+    .box p{margin:0; color:var(--muted); line-height:1.65; font-size:14px}
+    .socials{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .link{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: var(--btnbg);
+      border:1px solid var(--line);
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .link:hover{transform: translateY(-1px)}
+
+    footer{padding: 26px 0 40px; color: var(--muted); font-size: 13px}
+    .foot{
+      border-top:1px solid var(--line);
+      padding-top:16px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      justify-content:space-between; align-items:center;
+    }
+    .disclaimer{max-width: 90ch}
+
+    /* TOAST */
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%) translateY(18px);
+      background: rgba(15,23,42,.92);
+      color: #fff;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      font-weight: 900;
+      font-size: 13px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 999;
+      text-align:center;
+      max-width: calc(100vw - 24px);
+    }
+    [data-theme="dark"] .toast{
+      background: rgba(13,18,24,.92);
+      border: 1px solid rgba(58,160,255,.14);
+    }
+    .toast.show{opacity: 1; transform: translateX(-50%) translateY(0)}
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Outfit by Rihanna">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Outfit by Rihanna</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi">
+        <a href="#rekomendasi">Rekomendasi</a>
+        <a href="#kategori">Kategori</a>
+        <!-- Revisi: rekomendasi minggu langsung ke TikTok -->
+        <a href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Minggu Ini</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kerjasama">Kerja Sama</a>
+      </nav>
+
+      <div class="right">
+        <!-- Copy link TikTok -->
+        <button class="iconbtn" id="copyBtn" type="button" title="Copy link TikTok">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10 13a5 5 0 0 0 7.07 0l1.41-1.41a5 5 0 1 0-7.07-7.07L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M14 11a5 5 0 0 0-7.07 0L5.52 12.4a5 5 0 1 0 7.07 7.07L14 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <!-- Toggle dark mode -->
+        <button class="iconbtn" id="themeBtn" type="button" title="Mode gelap/terang">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 13.5A8.5 8.5 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-media" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div>
+            <span class="pill">Rekomendasi outfit • Daily OOTD • Simple & nyaman</span>
+            <h1>Kurasi outfit harian yang rapi, effortless, dan enak dipakai.</h1>
+            <p class="sub">
+              Semua rekomendasi di sini dibuat ringkas supaya kamu cepat dapat referensi.
+              Kalau cocok, klik CTA dan lanjut lihat detailnya di TikTok.
+            </p>
+
+            <div class="hero-actions">
+              <a class="cta primary" href="#rekomendasi">Lihat Rekomendasi</a>
+              <!-- Revisi: minggu ini langsung ke TikTok -->
+              <a class="cta" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Rekomendasi Minggu Ini</a>
+              <a class="cta" href="#kerjasama">Kerja Sama</a>
+              <a class="cta" href="https://wa.me/6285850944572" target="_blank" rel="noopener">Chat WhatsApp</a>
+            </div>
+
+            <p class="mini">
+              <strong>Tip:</strong> Tombol “Copy link TikTok” di kanan atas bikin kamu gampang share link favorit.
+            </p>
+          </div>
+
+          <div class="side">
+            <div class="stat">
+              <p class="title">Nuansa biru premium</p>
+              <p class="desc">Gradasi biru-putih bikin tampilan adem dan lebih profesional.</p>
+            </div>
+            <div class="stat">
+              <p class="title">Semua CTA satu arah</p>
+              <p class="desc">Outfit & “Minggu Ini” langsung mengarah ke TikTok biar simpel.</p>
+            </div>
+            <div class="stat">
+              <p class="title">Mode gelap elegan</p>
+              <p class="desc">Nyaman dilihat malam hari, tetap clean dan rapi.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kategori" class="section">
+      <h2>Kategori (dummy)</h2>
+      <div class="category">
+        <span class="chip">OOTD Harian</span>
+        <span class="chip">Atasan</span>
+        <span class="chip">Bawahan</span>
+        <span class="chip">Dress</span>
+        <span class="chip">Outfit Kerja</span>
+        <span class="chip">Outfit Santai</span>
+      </div>
+    </section>
+
+    <section id="rekomendasi" class="section">
+      <div class="row">
+        <div>
+          <h2>Outfit Favorit (dummy)</h2>
+          <p class="sub" style="margin-top:6px; max-width:80ch;">
+            Kartu outfit di bawah adalah contoh. Gambarnya dummy, tapi CTA selalu ke TikTok.
+          </p>
+        </div>
+        <a class="cta" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Buka TikTok</a>
+      </div>
+
+      <div class="grid">
+        <!-- NOTE: gambar dummy dibuat dari SVG data-uri agar "benar-benar muncul gambar" -->
+        <article class="card">
+          <div class="img" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22800%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop stop-color=%22%232a74b8%22/><stop offset=%221%22 stop-color=%22%23ffffff%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><circle cx=%22920%22 cy=%22260%22 r=%22190%22 fill=%22%23ffffff%22 fill-opacity=%220.35%22/><circle cx=%22320%22 cy=%22520%22 r=%22260%22 fill=%22%230b4d8a%22 fill-opacity=%220.18%22/><text x=%2260%22 y=%22720%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%230b1220%22 fill-opacity=%220.45%22>Outfit Dummy</text></svg>');">
+            <span class="tag">OOTD Harian</span>
+          </div>
+          <div class="body">
+            <h3 class="name">Set Basic Rapi</h3>
+            <p class="desc">Look simple untuk aktivitas harian. Mudah dipadukan dan tetap terlihat clean.</p>
+            <div class="badges"><span class="badge">simple</span><span class="badge">nyaman</span><span class="badge">mix &amp; match</span></div>
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22800%22><defs><linearGradient id=%22g%22 x1=%221%22 y1=%220%22 x2=%220%22 y2=%221%22><stop stop-color=%22%230b4d8a%22/><stop offset=%221%22 stop-color=%22%23eaf3ff%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><rect x=%22140%22 y=%22140%22 width=%22920%22 height=%22520%22 rx=%2240%22 fill=%22%23ffffff%22 fill-opacity=%220.30%22/><text x=%2260%22 y=%22720%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%230b1220%22 fill-opacity=%220.45%22>Outfit Dummy</text></svg>');">
+            <span class="tag">Outfit Kerja</span>
+          </div>
+          <div class="body">
+            <h3 class="name">Office Look Minimal</h3>
+            <p class="desc">Rapi tapi tidak kaku. Cocok untuk meeting atau hari kerja yang padat.</p>
+            <div class="badges"><span class="badge">rapi</span><span class="badge">effortless</span><span class="badge">daily</span></div>
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22800%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%221%22 x2=%221%22 y2=%220%22><stop stop-color=%22%23cfe6ff%22/><stop offset=%221%22 stop-color=%22%232a74b8%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><circle cx=%22360%22 cy=%22280%22 r=%22210%22 fill=%22%23ffffff%22 fill-opacity=%220.30%22/><circle cx=%22960%22 cy=%22580%22 r=%22260%22 fill=%22%230b4d8a%22 fill-opacity=%220.16%22/><text x=%2260%22 y=%22720%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%230b1220%22 fill-opacity=%220.45%22>Outfit Dummy</text></svg>');">
+            <span class="tag">Atasan</span>
+          </div>
+          <div class="body">
+            <h3 class="name">Top Clean Cut</h3>
+            <p class="desc">Atasan yang gampang dipakai ulang. Tinggal ganti bawahan, look langsung beda.</p>
+            <div class="badges"><span class="badge">basic</span><span class="badge">versatile</span><span class="badge">simple</span></div>
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22800%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop stop-color=%22%23ffffff%22/><stop offset=%221%22 stop-color=%22%230b4d8a%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><rect x=%2260%22 y=%2260%22 width=%221080%22 height=%22680%22 rx=%2250%22 fill=%22%23eaf3ff%22 fill-opacity=%220.35%22/><text x=%2260%22 y=%22720%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%230b1220%22 fill-opacity=%220.45%22>Outfit Dummy</text></svg>');">
+            <span class="tag">Bawahan</span>
+          </div>
+          <div class="body">
+            <h3 class="name">Bottom Daily</h3>
+            <p class="desc">Nyaman untuk dipakai seharian. Cocok untuk gaya santai maupun semi-formal.</p>
+            <div class="badges"><span class="badge">nyaman</span><span class="badge">daily</span><span class="badge">clean</span></div>
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22800%22><defs><linearGradient id=%22g%22 x1=%221%22 y1=%221%22 x2=%220%22 y2=%220%22><stop stop-color=%22%232a74b8%22/><stop offset=%221%22 stop-color=%22%23eaf3ff%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><circle cx=%22620%22 cy=%22400%22 r=%22280%22 fill=%22%23ffffff%22 fill-opacity=%220.28%22/><text x=%2260%22 y=%22720%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%230b1220%22 fill-opacity=%220.45%22>Outfit Dummy</text></svg>');">
+            <span class="tag">Dress</span>
+          </div>
+          <div class="body">
+            <h3 class="name">Dress Effortless</h3>
+            <p class="desc">Satu item yang langsung jadi outfit. Tinggal tambah aksesoris biar makin rapi.</p>
+            <div class="badges"><span class="badge">one piece</span><span class="badge">simple</span><span class="badge">rapi</span></div>
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="img" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%221200%22 height=%22800%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22><stop stop-color=%22%23eaf3ff%22/><stop offset=%221%22 stop-color=%22%232a74b8%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><circle cx=%22280%22 cy=%22260%22 r=%22210%22 fill=%22%23ffffff%22 fill-opacity=%220.28%22/><circle cx=%22920%22 cy=%22580%22 r=%22300%22 fill=%22%230b4d8a%22 fill-opacity=%220.14%22/><text x=%2260%22 y=%22720%22 font-family=%22Arial%22 font-size=%2260%22 fill=%22%230b1220%22 fill-opacity=%220.45%22>Outfit Dummy</text></svg>');">
+            <span class="tag">Outfit Santai</span>
+          </div>
+          <div class="body">
+            <h3 class="name">Weekend Cozy</h3>
+            <p class="desc">Santai tapi tetap terarah. Cocok untuk jalan tipis-tipis atau ngopi.</p>
+            <div class="badges"><span class="badge">cozy</span><span class="badge">daily</span><span class="badge">simple</span></div>
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Lihat di TikTok</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tentang" class="section">
+      <h2>Tentang</h2>
+      <div class="about">
+        <div class="box">
+          <h3>Outfit by Rihanna</h3>
+          <p>
+            Outfit by Rihanna adalah halaman kurasi outfit harian yang dipilih untuk tampilan simple, rapi, dan nyaman dipakai.
+            Semua CTA mengarah ke TikTok untuk melihat detail dan referensi lengkap.
+          </p>
+          <div class="socials" aria-label="Media sosial resmi">
+            <a class="link" href="https://www.facebook.com/rihannalbella/" target="_blank" rel="noopener">Facebook</a>
+            <a class="link" href="https://www.instagram.com/rihannabella08/" target="_blank" rel="noopener">Instagram</a>
+            <a class="link" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">TikTok</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Rekomendasi Minggu Ini</h3>
+          <p>
+            Untuk versi paling simpel, “Minggu Ini” langsung menuju TikTok.
+            Jadi kamu tinggal share satu link favorit tanpa ribet.
+          </p>
+          <div class="row" style="margin-top:12px;">
+            <a class="cta primary" href="https://www.tiktok.com/@rihannabella08" target="_blank" rel="noopener">Buka Minggu Ini di TikTok</a>
+            <button class="cta" id="copyBtn2" type="button">Copy link TikTok</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kerjasama" class="section">
+      <h2>Kerja Sama & Manajemen</h2>
+      <div class="box">
+        <h3 style="margin:0 0 6px;">Untuk brand, endorsement, atau kolaborasi</h3>
+        <p style="margin:0 0 14px;">Silakan hubungi manajemen via WhatsApp untuk diskusi kerja sama.</p>
+        <a class="cta primary" href="https://wa.me/6285850944572" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
+        <p class="mini" style="margin-top:12px;">Nomor: <strong>085850944572</strong></p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="foot">
+          <div class="disclaimer">
+            <strong>Disclaimer:</strong> Beberapa tautan mengarah ke TikTok dan dapat berhubungan dengan program affiliate. Konten dibuat sebagai rekomendasi dan kurasi outfit.
+          </div>
+          <div>© <span id="year"></span> Outfit by Rihanna</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const TIKTOK_URL = "https://www.tiktok.com/@rihannabella08";
+
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("href");
+        if (!id || id === "#") return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    // toast
+    const toastEl = document.getElementById("toast");
+    let toastTimer = null;
+    function toast(msg){
+      toastEl.textContent = msg;
+      toastEl.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove("show"), 1800);
+    }
+
+    // copy link
+    async function copyTikTok(){
+      try{
+        await navigator.clipboard.writeText(TIKTOK_URL);
+        toast("Link TikTok berhasil disalin ✅");
+      }catch(e){
+        const ta = document.createElement("textarea");
+        ta.value = TIKTOK_URL;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        toast("Link TikTok berhasil disalin ✅");
+      }
+    }
+    document.getElementById("copyBtn").addEventListener("click", copyTikTok);
+    document.getElementById("copyBtn2").addEventListener("click", copyTikTok);
+
+    // theme toggle (with localStorage)
+    const root = document.documentElement;
+    const themeBtn = document.getElementById("themeBtn");
+    const themeIcon = document.getElementById("themeIcon");
+
+    function setIcon(mode){
+      if(mode === "dark"){
+        themeIcon.innerHTML =
+          '<path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>' +
+          '<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+      } else {
+        themeIcon.innerHTML =
+          '<path d="M21 13.5A8.5 8.5 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>';
+      }
+    }
+
+    function applyTheme(mode){
+      if(mode === "dark") root.setAttribute("data-theme","dark");
+      else root.removeAttribute("data-theme");
+      setIcon(mode);
+      localStorage.setItem("theme", mode);
+    }
+
+    const saved = localStorage.getItem("theme");
+    if(saved){
+      applyTheme(saved);
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      applyTheme(prefersDark ? "dark" : "light");
+    }
+
+    themeBtn.addEventListener("click", () => {
+      const isDark = root.getAttribute("data-theme") === "dark";
+      applyTheme(isDark ? "light" : "dark");
+      toast(isDark ? "Mode terang aktif ☀️" : "Mode gelap aktif 🌙");
+    });
+  </script>
+</body>
+</html>
